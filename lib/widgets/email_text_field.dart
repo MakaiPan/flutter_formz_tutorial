@@ -9,10 +9,11 @@ class EmailTextField extends StatefulWidget {
 }
 
 class _EmailTextFieldState extends State<EmailTextField> {
-  final TextEditingController _controller = TextEditingController();
+  late final TextEditingController _controller;
 
   @override
   void initState() {
+    _controller = TextEditingController()..addListener(() => setState(() {}));
     super.initState();
   }
 
@@ -34,6 +35,7 @@ class _EmailTextFieldState extends State<EmailTextField> {
             decoration: const InputDecoration(
               labelText: 'Email (Using TextField)',
             ),
+            onChanged: (inputText) {},
           ),
         ),
         ElevatedButton(
